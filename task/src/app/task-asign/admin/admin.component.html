@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="p-3">
+                <div class="shadow">
+                    <div class="text-center p-2">
+                        <h4>Assign Task</h4>
+                    </div>
+                    <div class="row">         
+                        <div class="col-6 bold text-center">
+                            <p>Select Staff</p>
+                        </div>
+                        <div class="col-6 text-center form-group">
+                            <select [(ngModel)]="staffid">
+                                <option *ngFor="let staff of staffs" value="{{staff.id}}">{{staff.name}}</option>
+                            </select>
+                        </div>
+                        <form [formGroup]="staffdetailsform" >
+                        <div class="col-12">
+                            <div class="px-5 text-center form-group">
+                                <label for="tasktitle"> Task Title </label>
+                                <input type="text" class="form-control mt-2" id="tasktitle" formControlName="tasktitle">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="px-5 text-center form-group">
+                                <label for="assignwork"> Assign Work </label>
+                                <input type="text" class="form-control mt-2" id="assignwork" formControlName="assignedwork">
+                            </div>
+                        </div>
+                    </form>
+                        <div class="col-12">
+                            <div class="text-center p-2">
+                                <h4>Deadline</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-2 text-center">
+                                    <p>Date:</p>
+                                </div>
+                                <div class="col-4">
+                                    <div class="px-2 form-group">
+                                        <input type="date" [(ngModel)]="dateselected">
+                                    </div>
+                                </div>
+                                <div class="col-2 text-center">
+                                    <p>Time:</p>
+                                </div>
+                                <div class="col-4">
+                                    <div class="px-2 form-group">
+                                        <input type="time" [(ngModel)]="timeselected" >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center p-3">
+                            <button class="btn btn-primary" (click)="staffdetails()"> Submit </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div>
+                <p>Display Task list</p>
+            </div>
+        </div>
+    </div>
+</div>
